@@ -5,9 +5,13 @@ function solution(a, k) {
 
     // count frequency of each remainder map them to a hash
     const frequency = new Map();
+    // given array a, for each item in array
     a.forEach((x) => {
+        // calculate the remainder for each value in array and set to remainder variable
         const remainder = x % k;
+        // check the frequency map for that remainder and if it doesnt exist set oldFrequency to 0
         const oldFrequency = frequency.get(remainder) || 0;
+        // call the frequency map and set the oldFrequency value for that reminder 
         frequency.set(remainder, oldFrequency + 1);
     });
 
